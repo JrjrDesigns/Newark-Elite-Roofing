@@ -345,5 +345,21 @@
 <script>
 (function(){var header=document.getElementById('site-header');window.addEventListener('scroll',function(){header.classList.toggle('scrolled',window.scrollY>10);},{passive:true});var burger=document.getElementById('nav-burger'),nav=document.getElementById('nav-mobile');burger.addEventListener('click',function(){var o=nav.classList.toggle('is-open');burger.setAttribute('aria-expanded',String(o));nav.setAttribute('aria-hidden',String(!o));});document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-btn').addEventListener('click',function(){var open=item.classList.contains('is-open');document.querySelectorAll('.faq-item').forEach(function(fi){fi.classList.remove('is-open');fi.querySelector('.faq-btn').setAttribute('aria-expanded','false');});if(!open){item.classList.add('is-open');item.querySelector('.faq-btn').setAttribute('aria-expanded','true');}});});var yr=document.getElementById('copy-year');if(yr)yr.textContent=new Date().getFullYear();document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(!t)return;e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-header.offsetHeight-16,behavior:'smooth'});nav.classList.remove('is-open');burger.setAttribute('aria-expanded','false');nav.setAttribute('aria-hidden','true');});});})();
 </script>
+<script>
+document.querySelectorAll("form").forEach(function(form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    fetch("https://james-francis.app.n8n.cloud/webhook/0ebef060-cb3b-4f70-91bb-cdc6046d1dbf", {
+      method: "POST",
+      body: new URLSearchParams(data)
+    }).then(function() {
+      window.location.href = "https://newarkeliteroofing.com/thank-you.html";
+    }).catch(function() {
+      window.location.href = "https://newarkeliteroofing.com/thank-you.html";
+    });
+  });
+});
+</script>
 </body>
 </html>

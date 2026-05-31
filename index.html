@@ -972,5 +972,21 @@
 })();
 </script>
 
+<script>
+document.querySelectorAll("form").forEach(function(form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    fetch("https://james-francis.app.n8n.cloud/webhook/0ebef060-cb3b-4f70-91bb-cdc6046d1dbf", {
+      method: "POST",
+      body: new URLSearchParams(data)
+    }).then(function() {
+      window.location.href = "https://newarkeliteroofing.com/thank-you.html";
+    }).catch(function() {
+      window.location.href = "https://newarkeliteroofing.com/thank-you.html";
+    });
+  });
+});
+</script>
 </body>
 </html>
