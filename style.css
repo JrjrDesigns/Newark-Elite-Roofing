@@ -530,3 +530,12 @@ footer { background: var(--charcoal); padding: 60px 0 0; border-top: 3px solid v
   .hero-call-card { order: -1; border-radius: 0; border-bottom: 3px solid var(--brick); }
   .page-hero-content { padding: 36px 18px 48px; }
 }
+
+/* --- Utility classes (replaces equivalent inline styles; identical output) --- */
+.title-white{color:var(--white)}
+.btn-full-w{width:100%}
+.link-inherit{color:inherit}
+.link-brick{color:var(--brick);font-weight:600}
+.mt-8{margin-top:8px}
+.mt-20{margin-top:20px}
+.narrow-center{max-width:780px;margin:40px auto 0}
