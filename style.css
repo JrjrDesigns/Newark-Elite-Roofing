@@ -347,6 +347,9 @@ footer { background: var(--charcoal); padding: 60px 0 0; border-top: 3px solid v
    RESPONSIVE — TABLET (1024px)
    ══════════════════════════════════════ */
 @media (max-width: 1024px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+  .nav-inner { gap: 16px; }
   .hero-inner { grid-template-columns: 1fr; min-height: auto; gap: 0; padding: 0; }
   .hero-call-card { order: -1; border-radius: 0; box-shadow: var(--shadow-md); border-bottom: 3px solid var(--brick); }
   .hero-content { padding: 48px 0 56px; }
@@ -376,9 +379,6 @@ footer { background: var(--charcoal); padding: 60px 0 0; border-top: 3px solid v
   :root { --header-h: 64px; }
   .container { padding: 0 18px; }
   #top-bar { display: none; }
-  .nav-links, .nav-cta { display: none; }
-  .nav-burger { display: flex; }
-  .nav-inner { gap: 16px; }
   .nav-logo img { height: 44px; }
 
   #hero { min-height: auto; }
