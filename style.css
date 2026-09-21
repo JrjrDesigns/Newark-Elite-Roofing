@@ -540,42 +540,48 @@ footer { background: var(--charcoal); padding: 60px 0 0; border-top: 3px solid v
 .mt-20{margin-top:20px}
 .narrow-center{max-width:780px;margin:40px auto 0}
 
+
 /* ============================================
-   MOBILE STICKY CALL BAR (≤1024px only)
-   Additive — hidden on desktop, no layout impact above 1024px.
+   MOBILE STICKY CALL BAR (<=1024px only) - v2 compact, 2026-09-21
+   44px tall (Apple minimum tap target). Hidden on desktop.
    ============================================ */
 .mobile-call-bar { display: none; }
-
 @media (max-width: 1024px) {
   .mobile-call-bar {
-    display: flex;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1200;
-    background: var(--brick);
-    box-shadow: 0 -4px 18px rgba(0,0,0,0.22);
-    border-top: 2px solid var(--brick-hover);
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1200;
+    background: var(--brick); box-shadow: 0 -2px 10px rgba(0,0,0,0.18);
   }
   .mobile-call-bar a {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    min-height: 58px;
-    padding: 10px 16px;
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    text-decoration: none;
-    border: none;
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+    height: 44px; padding: 0 16px;
+    font-family: var(--font-display); font-size: 17px; font-weight: 800; letter-spacing: 0.02em;
+    color: var(--white); text-decoration: none; border: none; white-space: nowrap;
   }
   .mobile-call-bar a:active { background: var(--brick-hover); }
-  .mobile-call-bar svg { flex-shrink: 0; }
+  .mobile-call-bar svg { width: 17px; height: 17px; flex-shrink: 0; }
   /* keep the fixed bar from covering footer legal links */
-  footer { padding-bottom: 76px; }
+  footer,
+  .site-footer { padding-bottom: 60px; }
+}
+
+/* ============================================
+   HEADER PHONE - v2, 2026-09-21
+   Phone shown once: in the header at every width (top-bar copy removed from HTML).
+   <=1024px the desktop CTA block is hidden, so show just the number beside the menu button.
+   ============================================ */
+.nav-phone-number { white-space: nowrap; }
+@media (max-width: 1024px) {
+  .nav-cta { display: flex; gap: 0; margin-left: auto; }
+  .nav-cta .btn, .nav-phone-label { display: none; }
+  .nav-phone-number { font-size: 22px; }
+  .nav-burger { margin-left: 6px; }
+}
+@media (max-width: 400px) {
+  .nav-phone-number { font-size: 19px; }
+  .nav-logo img { height: 38px; }
+}
+/* long phone CTA buttons overflowed a 375px screen */
+@media (max-width: 480px) {
+  .btn { white-space: normal; max-width: 100%; text-align: center; line-height: 1.2; }
+  .btn-lg { padding: 16px 22px; font-size: 16px; }
 }
